@@ -18,7 +18,7 @@ client = OpenAI(api_key=my_key_openai)
 def generate_image_with_dalle(prompt):
     
     AI_response = client.images.generate(
-        model="dall-e-2",
+        model="dall-e-3",
         size="1024x1024",
         quality="hd",
         n=1,
@@ -55,7 +55,7 @@ def gemini_vision_with_local_file(image_path , prompt):
     modelini kullanarak görsel oluşturmakta kullanacağım. O yüzden yanıtına son halini verirken bunun resim üretmekte kullanılacak bir
     girdi yani prompt olduğunu dikkate al. İşte ek yönerge şöyle: {prompt}
     """
-    client = genai.GenerativeModel(model_name='gemini-pro-vision')
+    client = genai.GenerativeModel(model_name='gemini-1.5-flash')
     source_image = PIL.Image.open(image_path)
 
     AI_response = client.generate_content(
